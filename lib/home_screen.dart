@@ -2,6 +2,11 @@ import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import 'ask_ai_screen.dart';
+import 'community_screen.dart';
+import 'cycle_screen.dart';
+import 'wellness_hub_screen.dart';
+
 /// Solea home screen.
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -938,19 +943,47 @@ class _BottomNav extends StatelessWidget {
             child: _NavItem(
                 icon: Icons.home_filled, label: 'Home', selected: true),
           ),
-          const Expanded(
-            child: _NavItem(
-                icon: Icons.medication_outlined, label: 'Cycle'),
+          Expanded(
+            child: Builder(
+              builder: (context) => _NavItem(
+                icon: Icons.medication_outlined,
+                label: 'Cycle',
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const CycleScreen()),
+                ),
+              ),
+            ),
           ),
-          const Expanded(
-            child: _NavItem(
-                icon: Icons.auto_awesome, label: 'Wellness hub'),
+          Expanded(
+            child: Builder(
+              builder: (context) => _NavItem(
+                icon: Icons.auto_awesome,
+                label: 'Wellness hub',
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const WellnessHubScreen()),
+                ),
+              ),
+            ),
           ),
-          const Expanded(
-            child: _NavItem(icon: Icons.forest_outlined, label: 'Community'),
+          Expanded(
+            child: Builder(
+              builder: (context) => _NavItem(
+                icon: Icons.forest_outlined,
+                label: 'Community',
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const CommunityScreen()),
+                ),
+              ),
+            ),
           ),
           const SizedBox(width: 6),
-          _AskButton(onTap: () {}),
+          Builder(
+            builder: (context) => _AskButton(
+              onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const AskAiScreen()),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -962,17 +995,22 @@ class _NavItem extends StatelessWidget {
     required this.icon,
     required this.label,
     this.selected = false,
+    this.onTap,
   });
 
   final IconData icon;
   final String label;
   final bool selected;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
         Container(
           width: 44,
           height: 44,
@@ -1000,7 +1038,8 @@ class _NavItem extends StatelessWidget {
             color: _HomeScreenState._ink,
           ),
         ),
-      ],
+        ],
+      ),
     );
   }
 }
