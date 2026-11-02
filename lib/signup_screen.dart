@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import 'home_screen.dart';
 import 'login_screen.dart';
 
 /// Solea sign-up screen.
@@ -166,7 +167,11 @@ class _SignupScreenState extends State<SignupScreen> {
                   const SizedBox(height: 24),
 
                   // Primary CTA.
-                  _CreateAccountButton(onPressed: () {}),
+                  _CreateAccountButton(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const HomeScreen()),
+                    ),
+                  ),
                   const SizedBox(height: 24),
 
                   const _OrDivider(),

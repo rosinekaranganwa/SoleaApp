@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import 'home_screen.dart';
 import 'signup_screen.dart';
 
 /// Solea login screen.
@@ -149,7 +150,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 24),
 
                   // Primary CTA.
-                  _LoginButton(onPressed: () {}),
+                  _LoginButton(
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (_) => const HomeScreen()),
+                    ),
+                  ),
                   const SizedBox(height: 24),
 
                   const _OrDivider(),
