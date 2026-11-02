@@ -81,6 +81,4 @@ Navigation flows: **Splash → Sign up / Log in → Home**, with the bottom bar 
 - Icons use the closest Material built-ins; swap in custom assets for a pixel-exact brand look.
 - The app ships with a default system font. For the exact geometric typeface, add a custom font under `pubspec.yaml`.
 
-## License
-
-Add a license of your choice (e.g. MIT) before publishing.
+https://www.figma.com/proto/vfZ3TPA7SXB5CpuuEs8wot/S%C5%8Dlea-Wellness?node-id=2943-806&t=ecxv7kifSNTVpKF3-0&scaling=min-zoom&content-scaling=fixed&page-id=2002%3A2&starting-point-node-id=2943%3A806
