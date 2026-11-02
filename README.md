@@ -1,14 +1,12 @@
 # Sōlea
 
-**Your wellness sanctuary** — a Flutter app for cycle tracking, phase-aware training & nutrition, an AI health assistant, doctor consultations, and a women's-health community.
+Your wellness sanctuary a Flutter app for cycle tracking, phase-aware training & nutrition, an AI health assistant, doctor consultations, and a women's-health community.
 
 Sōlea helps you track your menstrual cycle, eat and train for your current phase, talk to a doctor from home, and learn and share with a supportive community.
 
----
+Features
 
-## Features
-
-- **Onboarding** — splash, sign up, and log in screens with a soft mesh-gradient look.
+- Onboarding** — splash, sign up, and log in screens with a soft mesh-gradient look.
 - **Home** — daily greeting, week strip, weekly goal progress, mood check-in, and a recommended-for-today timeline.
 - **Cycle tracking** — a phase ring (menstrual / follicular / ovulatory / luteal), period prediction, a month calendar, and a symptom & flow logger.
 - **Ask Sōlea (AI)** — a chat assistant with cycle-aware answers, a voice input screen, and a doctors chat with booked video consultations.
